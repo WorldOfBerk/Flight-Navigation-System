@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+# Debug folders
+.idea
+.vscode
+
+# CLion
+cmake-build-*/
+
+CMakeLists.txt.user
+CMakeLists.txt.user.*
