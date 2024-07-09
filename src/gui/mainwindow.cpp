@@ -1,5 +1,9 @@
-//
-// Created by b_sen on 09.07.2024.
-//
-
 #include "mainwindow.h"
+
+MainWindow::MainWindow() {
+
+}
+
+void MainWindow::draw(sf::RenderWindow &window) {
+
+}

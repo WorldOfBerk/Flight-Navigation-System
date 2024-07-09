@@ -20,15 +20,14 @@ load_env_file(${CMAKE_SOURCE_DIR}/.env)
 # Include directories
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
-# Add CMake module path
-set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules" ${CMAKE_MODULE_PATH})
-
 # Set CURL paths
 set(CURL_INCLUDE_DIR $ENV{CURL_PATH}/include)
 set(CURL_LIBRARY $ENV{CURL_PATH}/lib/libcurl.dll.a)
 
-# Find SFML
-find_package(SFML 2.5 REQUIRED graphics window system)
+# Include FindSFML module
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules" ${CMAKE_MODULE_PATH})
+
+include(FindSFML)
 
 # Find cURL
 find_package(CURL REQUIRED)
@@ -50,5 +49,10 @@ add_executable(FlightNavigationSystem src/main.cpp
         src/controllers/flight_controller.h)
 
 # Link libraries
-target_link_libraries(FlightNavigationSystem ${SFML_LIBRARIES} ${CURL_LIBRARY} nlohmann_json::nlohmann_json)
+target_link_libraries(FlightNavigationSystem
+        ${SFML_LIBRARIES}
+        ${CURL_LIBRARY}
+        nlohmann_json::nlohmann_json
+)
+
 include_directories(${SFML_INCLUDE_DIRS} ${CURL_INCLUDE_DIR})

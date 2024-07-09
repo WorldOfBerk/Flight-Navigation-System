@@ -1,7 +1,24 @@
 #include <iostream>
+#include <SFML/Graphics.hpp>
+#include "gui/mainwindow.h"
 
 int main()
 {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    // Initialize SFML window
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Flight Navigation System");
+
+    MainWindow mainWindow;
+
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+
+        window.clear();
+        mainWindow.draw(window);
+        window.display();
+
+    }
 }
