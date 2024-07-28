@@ -32,7 +32,17 @@ find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
 find_package(CURL REQUIRED)
 
 # Include directories
-include_directories(${CMAKE_SOURCE_DIR}/include ${SFML_INCLUDE_DIR} ${CURL_INCLUDE_DIR})
+include_directories(
+        ${CMAKE_SOURCE_DIR}/include
+        ${CMAKE_SOURCE_DIR}/src
+        ${CMAKE_SOURCE_DIR}/src/gui
+        ${CMAKE_SOURCE_DIR}/src/utils
+        ${CMAKE_SOURCE_DIR}/src/models
+        ${CMAKE_SOURCE_DIR}/src/controllers
+        ${SFML_INCLUDE_DIR}
+        ${CURL_INCLUDE_DIR}
+        ${CMAKE_SOURCE_DIR}/cmake-build-debug/_deps/nlohmann_json-src/include
+)
 
 # Add the executable
 add_executable(FlightNavigationSystem
