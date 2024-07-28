@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <SFML/Graphics.hpp>
+#include "utils/map_drawer.h"
 
 class MainWindow {
 public:
@@ -9,6 +10,7 @@ public:
     void draw(sf::RenderWindow &window);
 
 private:
+    MapDrawer mapDrawer;
     sf::CircleShape shape;
 };
 
