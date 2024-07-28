@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 #include "utils/map_drawer.h"
+#include "utils/engine_data.h"
+#include "utils/api_handler.h"
 
 class MainWindow {
 public:
@@ -12,6 +14,7 @@ public:
 private:
     MapDrawer mapDrawer;
     sf::CircleShape shape;
+    EngineData engineData;
 };
 
 #endif //MAINWINDOW_H
