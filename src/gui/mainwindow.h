@@ -4,12 +4,12 @@
 #include <SFML/Graphics.hpp>
 
 class MainWindow {
-    public:
-        MainWindow();
-        void draw(sf::RenderWindow &window);
+public:
+    MainWindow();
+    void draw(sf::RenderWindow &window);
 
-    private:
-
+private:
+    sf::CircleShape shape;
 };
 
 #endif //MAINWINDOW_H

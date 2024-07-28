@@ -1,4 +1,3 @@
-#include <iostream>
 #include <SFML/Graphics.hpp>
 #include "gui/mainwindow.h"
 
@@ -19,6 +18,7 @@ int main()
         window.clear();
         mainWindow.draw(window);
         window.display();
-
     }
+
+    return 0;
 }
